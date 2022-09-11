@@ -1,24 +1,28 @@
-import logo from './logo.svg';
+import { Container, Row, Col } from 'react-bootstrap';
 import './App.css';
+import AddForm from './Components/AddForm';
+import RockList from './Components/RockList';
+import RockContextProvider from './Context/RockContext';
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import EditForm from './Components/EditForm';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <BrowserRouter>
+      <Container>
+      <Row>
+        <Col>
+          <RockContextProvider>
+            <RockList/>
+          </RockContextProvider>
+        </Col>
+      </Row>
+    </Container>
+
+    {/* <Routes>
+      <Route path="" element={<EditForm/>}/>
+    </Routes> */}
+   </BrowserRouter>
   );
 }
 
