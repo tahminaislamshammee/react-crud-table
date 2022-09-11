@@ -1,0 +1,31 @@
+{
+    "rock": [
+        {
+            "id": "1", 
+            "name": "Thomas 1", 
+            "email": "thomashardy@gmail.com",
+            "address": "xyz"
+        },
+ 
+        {
+            "id": "2", 
+            "name": "Thomas 2", 
+            "email": "thomashardy@gmail.com",
+            "address": "xyz"
+        },
+
+        {
+            "id": "3", 
+            "name": "Thomas 3", 
+            "email": "thomashardy@gmail.com",
+            "address": "xyz"
+        },
+
+        {
+            "id": "4", 
+            "name": "Thomas 4", 
+            "email": "thomashardy@gmail.com",
+            "address": "xyz"
+        }
+    ]
+}
