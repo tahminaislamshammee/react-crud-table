@@ -54,11 +54,11 @@ const RockList = () => {
                 </tr>
             </thead>
             <tbody>
-                {rock.map((item)=>(
+                {rock? rock.map((item)=>(
                     <tr key={item.id} onClick={handleModal}>
                        <Rock rock={item}/>
                     </tr>
-                ))}       
+                )): <div>no data available</div>}       
             </tbody>
         </Table>
         <Modal show={show}>

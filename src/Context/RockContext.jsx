@@ -24,7 +24,6 @@ const RockContextProvider = (props) => {
         setRock([...rock, {id: uuidv4(), name, email, address}]);
 
         const newRock = {name,email,address}
-
         fetch('http://localhost:8000/rock',{
             method: 'POST',
             headers:{'Content-Type': 'application/json'},
@@ -36,6 +35,11 @@ const RockContextProvider = (props) => {
 
     const deleteRock = (id) => {
         setRock(rock.filter(item => item.id !=id))
+        fetch(`http://localhost:8000/rock/`+ id, {
+            method: 'DELETE'
+        }).then(()=>{
+            console.log("deleted")
+        })
     }
 
     const updateRock = (id, updatedRock) => {
