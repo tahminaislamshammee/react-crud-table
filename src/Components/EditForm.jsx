@@ -14,6 +14,14 @@ const EditForm = ({rock}) => {
     const handleSubmit = (e) =>{
         e.preventDefault();
         updateRock(id, updatedRock);
+
+        fetch(`http://localhost:8000/rock/`+ id,{
+            method: 'PUT',
+            headers:{'Content-Type': 'application/json'},
+            body: JSON.stringify(updatedRock)
+        }).then(()=>{
+            console.log('updated', id);
+        })
     }
 
     return ( 

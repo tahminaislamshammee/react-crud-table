@@ -44,6 +44,13 @@ const RockContextProvider = (props) => {
 
     const updateRock = (id, updatedRock) => {
         setRock(rock.map((item)=>item.id === id ? updatedRock : item))
+        fetch(`http://localhost:8000/rock/`+ id,{
+            method: 'PUT',
+            headers:{'Content-Type': 'application/json'},
+            body: JSON.stringify(updatedRock)
+        }).then(()=>{
+            console.log('new blog added');
+        })
     }
 
     return ( 
