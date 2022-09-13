@@ -2,7 +2,7 @@ import { useContext, useState } from 'react';
 import {Form, Button} from 'react-bootstrap';
 import { RockContext } from '../Context/RockContext';
 const AddForm = () => {
-    const {addNewRock} = useContext(RockContext);
+    const {addNewRock, rock} = useContext(RockContext);
     const [newRock, SetNewRock] = useState({
         name:"",
         email: "",
@@ -17,9 +17,17 @@ const AddForm = () => {
 
     const handleSubmit = (e)=>{
         e.preventDefault();
-        addNewRock(name, email,address);
+        const newData= {name,email,address}
+        addNewRock(name,email,address)
+        // fetch('http://localhost:8000/rock',{
+        //     method: 'POST',
+        //     headers:{'Content-Type': 'application/json'},
+        //     body: JSON.stringify(newRock)
+        // }).then(()=>{
+        //     console.log('new blog added');
+        // })
         
-    }
+    }   
 
     return ( 
         <Form onSubmit={handleSubmit}>

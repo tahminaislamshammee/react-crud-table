@@ -22,6 +22,16 @@ const RockContextProvider = (props) => {
 
     const addNewRock = (name, email, address) =>{
         setRock([...rock, {id: uuidv4(), name, email, address}]);
+
+        const newRock = {name,email,address}
+
+        fetch('http://localhost:8000/rock',{
+            method: 'POST',
+            headers:{'Content-Type': 'application/json'},
+            body: JSON.stringify(newRock)
+        }).then(()=>{
+            console.log('new blog added');
+        })
     }
 
     const deleteRock = (id) => {

@@ -5,9 +5,11 @@ import { RockContext } from "../Context/RockContext";
 import AddForm from "./AddForm";
 import RockView from "./RockView";
 import {AiFillPlusCircle, AiOutlinePlus} from 'react-icons/ai';
+import EditModal from "./EditModal";
+import Modall from "./Modall";
 const RockList = () => {
     const {rock} = useContext(RockContext);
-    const [show, setShow] = useState(false);
+    const [show, setShow] = useState(true);
     const [showView, setShowView] =useState(false);
     const handleShow = ()=>{
         setShow(!show);
